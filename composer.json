@@ -1,0 +1,17 @@
+{
+    "name": "dell/phpiggy",
+    "description": "A PHP app",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    },
+    "authors": [
+        {
+            "name": "ljutaev"
+        }
+    ],
+    "require": {}
+}
