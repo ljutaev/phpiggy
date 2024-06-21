@@ -10,9 +10,23 @@ class TemplateEngine
     {
     }
 
-    public function render(string $template, array $data = []): void
+    public function render(string $template, array $data = []): string
     {
         extract($data, EXTR_SKIP);
-        include "{$this->basePath}/{$template}";
+
+        ob_start();
+
+        include $this->resolve($template);
+
+        $output = ob_get_clean();
+
+        ob_end_clean();
+
+        return $output;
+    }
+
+    public function resolve(string $path): string
+    {
+        return "{$this->basePath}/{$path}";
     }
 }

@@ -7,7 +7,7 @@ namespace App\Controllers;
 use Framework\TemplateEngine;
 use App\Config\Paths;
 
-class HomeController
+class AboutController
 {
     private TemplateEngine $view;
 
@@ -17,6 +17,9 @@ class HomeController
     }
     public function index(): void
     {
-        echo $this->view->render('/index.php', ['title' => 'Home']);
+        echo $this->view->render('/about.php', [
+            'title' => 'About',
+            'dataAlert' => '<script>alert("Hello")</script>',
+        ]);
     }
 }
