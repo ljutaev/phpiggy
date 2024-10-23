@@ -14,3 +14,10 @@ function e(mixed $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
+
+function redirectTo(string $path): void
+{
+    header("Location: $path");
+    http_response_code(302);
+    exit;
+}

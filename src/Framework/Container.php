@@ -45,7 +45,6 @@ class Container
             $type = $param->getType();
 
             if( !$type ) {
-                dd($type);
                 throw new ContainerException("Cannot resolve type for {$param->name}");
             }
 
